@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: darkgoldenrod;
+    }
+    li{
+        float: right;
+    }
+    li a{
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover{
+        background-color: burlywood;
+    }
+</style>
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>index.html</title>
 </head>
+</html>
 <body>
+<ul>
+    <li><a href="login">Log In</a></li>
+    <li><a href="create account">Create Account</a></li>
+</ul>
     <p>{% block content %}{% endblock %}</p>
 </body>
 </html>
