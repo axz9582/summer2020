@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"}>
 </head>
 <body>
-<ul>
-    <li><a href="/">Home</a> </li>
-    <li><a href="login">Log In</a></li>
-    <li><a href="create">Create Account</a></li>
-</ul>
+    <nav class="navigation-bar">
+        <a href="/"><img src="" alt="Home"></a>
+        <ul>
+            <li><a href="login">Log In</a></li>
+            <li><a href="create">Create Account</a></li>
+        </ul>
+    </nav>
     <p>{% block content %}{% endblock %}</p>
 </body>
 </html>
