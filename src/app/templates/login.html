@@ -1,2 +1,29 @@
 {% extends "base.html" %}
 {% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>Sign In</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }} <br>
+            {{ form.username(size=32) }} <br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">*{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }} <br>
+            {{ form.password(size=32) }} <br>
+            {% for error in form.password.errors %}
+            <span style="color: red;">*{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.keep_signed_in() }} {{ form.keep_signed_in.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</div>
+
+{% endblock %}
