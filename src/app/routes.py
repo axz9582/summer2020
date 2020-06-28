@@ -13,7 +13,7 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash(f"Login requested for user {form.username.data}, remember_me={form.remember_me.data}")
+        flash(f"Login requested for user {form.username.data}, keep_signed_in={form.keep_signed_in.data}")
         return redirect('/')
     return render_template("login.html", title="Log In", form=form)
 
