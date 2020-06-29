@@ -7,10 +7,10 @@
 </head>
 <body>
     <nav class="navigation-bar">
-        <a href="/"><img src="" alt="Home"></a>
         <ul>
-            <li><a href="login">Log In</a></li>
-            <li><a href="create">Create Account</a></li>
+            <a href="{{ url_for('index') }}"><img src="" alt="Home"></a>
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('create_account') }}">Create Account</a></li>
         </ul>
     </nav>
     <p>{% block content %}{% endblock %}</p>
