@@ -18,7 +18,10 @@ def login():
     return render_template("login.html", title="Log In", form=form)
 
 
-@app.route("/create")
+@app.route("/create", methods=["GET", "POST"])
 def create_account():
     form = CreateAccountForm()
+    if form.validate_on_submit():
+        flash(f"New account requested for user {form.username.data}, email={form.email.data}")
+        return redirect(url_for("login"))
     return render_template("create_account.html", title="Create Account", form=form)
